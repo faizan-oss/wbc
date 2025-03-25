@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | BBC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-sections">
+            <div class="form-container" id="emailForm">
+               <div id="logo-">
+                <img src="https://github.com/faizan-oss/wbc/blob/main/images/Your%20paragraph%20text%20(3).png?raw=true" alt="">
+               </div>
+                <h2>Register for a WBC account</h2>
+                <p>You must be 18 or over to register for a BBC account</p>
+                <form onsubmit="event.preventDefault(); checkAndProceed();">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <p class="error" id="emailError"></p>
+                    <button type="submit">Continue</button>
+                </form>
+                <p class="signin">Already have a BBC account? <a href="#" onclick="showLoginUI()">Sign in now</a></p>
+            </div>
+            <div class="form-container" id="passwordForm" style="display: none;">
+                <div id="logo-">
+                    <img src="https://github.com/faizan-oss/wbc/blob/main/images/Your%20paragraph%20text%20(3).png?raw=true" alt="">
+                   </div>
+                <h2>Create your account password</h2>
+                <p>Passwords need to include...</p>
+                <ul>
+                    <li>At least eight characters</li>
+                    <li>At least one letter</li>
+                    <li>At least one number or symbol</li>
+                </ul>
+                <form onsubmit="event.preventDefault(); saveUser();">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <button type="button" id="togglePassword">Show password</button>
+                    <button type="submit">Continue</button>
+                </form>
+            </div>
+            <div class="form-container" id="loginForm" style="display: none;">
+                <div id="logo-">
+                    <img src="https://github.com/faizan-oss/wbc/blob/main/images/Your%20paragraph%20text%20(3).png?raw=true" alt="">
+                   </div>
+                <h2>Sign in to your account</h2>
+                <form onsubmit="event.preventDefault(); loginUser();">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p class="error" id="loginError"></p>
+                <p class="signin">Don't have an account? <a href="#" onclick="showRegisterUI()">Register now</a></p>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://cdn.sanity.io/images/dws6q1nc/production/5ab2ca52776487c3d44eee92e1b8f96626c84276-2500x1668.jpg" alt="Ice Climbing">
+            <img src="https://t4.ftcdn.net/jpg/02/82/43/41/360_F_282434182_iHeeFqg4t9EGw9mehVBth6mF2EfJfkyE.jpg" alt="Woman in Grass">
+            <img src="https://thumbs.dreamstime.com/b/tv-reporter-discussing-latest-news-talking-international-events-worldwide-drama-journalist-newsroom-doing-newscast-359013743.jpg" alt="News Reporter">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTm1nLQneJPqqeR0pKkrRACUSrjajJFfsMlhg&s" alt="Confetti Crowd">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

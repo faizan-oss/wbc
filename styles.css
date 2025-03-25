@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    background-color: #111;
+    padding: 30px;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Add new styles for form sections */
+.form-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+h1 {
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+h2 {
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #1669c1;
+}
+
+.signin a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.image-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#logo-{
+    width: 80px;
+}
+
+#logo- img{
+    width: 100%;
+}
