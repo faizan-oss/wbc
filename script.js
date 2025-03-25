@@ -250,7 +250,7 @@ function loginUser() {
     if (users[email] && users[email] === password) {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("userEmail", email);
-        window.location.href = "mainPage.html";
+        window.location.href = "index.html";
     } else {
         document.getElementById("loginError").innerText = "Invalid email or password.";
     }
