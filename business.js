@@ -1,26 +1,26 @@
-const SPORTS_API = "https://newsdata.io/api/1/latest?apikey=pub_240aa4563f1d4e3fb38e1f8645ff4b56&q=sports";
+const BUSINESS_API = "https://newsdata.io/api/1/latest?apikey=pub_240aa4563f1d4e3fb38e1f8645ff4b56&q=business";
 
 let totalArticles = [];
 let currentPage = 1;
 const articlesPerPage = 8;
 
-async function fetchSportsNews() {
+async function fetchBusinessNews() {
     try {
-        const response = await fetch(SPORTS_API);
+        const response = await fetch(BUSINESS_API);
         const data = await response.json();
         if (!data.results || data.results.length === 0) {
-            document.getElementById("news-container").innerHTML = "<p>No sports news found.</p>";
+            document.getElementById("news-container").innerHTML = "<p>No business news found.</p>";
             return;
         }
         totalArticles = data.results;
-        displayNews();
-        setupPagination();
+        displayBusinessNews();
+        setupBusinessPagination();
     } catch (error) {
-        document.getElementById("news-container").innerHTML = "<p>Error fetching sports news.</p>";
+        document.getElementById("news-container").innerHTML = "<p>Error fetching business news.</p>";
     }
 }
 
-function displayNews() {
+function displayBusinessNews() {
     const newsContainer = document.getElementById("news-container");
     newsContainer.innerHTML = "";
 
@@ -31,7 +31,7 @@ function displayNews() {
     articlesToShow.forEach((article, index) => {
         const newsItem = document.createElement("div");
         newsItem.classList.add("news-item");
-        newsItem.style.gridColumn = index === 0 ? "span 2" : "span 1"; // Make the first column wider
+        newsItem.style.gridColumn = index === 0 ? "span 2" : "span 1";
 
         newsItem.innerHTML = `
             <img src="${article.image_url || 'https://via.placeholder.com/300'}" alt="News Image">
@@ -43,7 +43,7 @@ function displayNews() {
     });
 }
 
-function setupPagination() {
+function setupBusinessPagination() {
     const paginationContainer = document.getElementById("pagination");
     paginationContainer.innerHTML = "";
     const totalPages = Math.ceil(totalArticles.length / articlesPerPage);
@@ -54,11 +54,11 @@ function setupPagination() {
         if (i === currentPage) pageButton.classList.add("active");
         pageButton.addEventListener("click", () => {
             currentPage = i;
-            displayNews();
-            setupPagination();
+            displayBusinessNews();
+            setupBusinessPagination();
         });
         paginationContainer.appendChild(pageButton);
     }
 }
 
-fetchSportsNews();
+fetchBusinessNews(); 

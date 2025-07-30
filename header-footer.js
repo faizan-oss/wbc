@@ -8,7 +8,7 @@ function addHeader() {
                     <i style="font-size: 24px;" class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div class="middle-head">
-                    <a href="mainPage.html">
+                    <a href="index.html">
                         <img src="https://github.com/faizan-oss/wbc/blob/main/images/Your%20paragraph%20text%20(3).png?raw=true" alt="">
                     </a>
                 </div>
@@ -19,10 +19,10 @@ function addHeader() {
             </header>
             <hr style="margin-top: 20px;">
             <div class="nav-bar">
-                <a href="mainPage.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link">Home</a>
                 <a href="news.html" class="nav-link">News</a>
                 <a href="sports.html" class="nav-link">Sports</a>
-                <a href="#" class="nav-link">Business</a>
+                <a href="business.html" class="nav-link">Business</a>
                 <a href="#" class="nav-link">Inovation</a>
                 <a href="#" class="nav-link">Culture</a>
                 <a href="#" class="nav-link">Arts</a>
@@ -37,10 +37,10 @@ function addHeader() {
         <div id="mobile-menu" class="mobile-nav">
             <span id="close-menu">&times;</span>
             <ul>
-                <li><a href="mainPage.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="sports.html">Sports</a></li>
-                <li><a href="#">Business</a></li>
+                <li><a href="business.html">Business</a></li>
                 <li><a href="#">Innovation</a></li>
                 <li><a href="#">Culture</a></li>
                 <li><a href="#">Arts</a></li>
@@ -70,7 +70,7 @@ function addHeader() {
     });
 
     // Add active state to current page link
-    const currentPage = window.location.pathname.split('/').pop() || 'mainPage.html';
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link, .mobile-nav a');
     
     navLinks.forEach(link => {
@@ -86,16 +86,16 @@ function addFooter() {
         <footer>
             <div class="footer-container">
                 <div class="footer-logo">
-                    <a href="mainPage.html">
+                    <a href="index.html">
                         <img src="https://github.com/faizan-oss/wbc/blob/main/images/Your%20paragraph%20text%20(3).png?raw=true" alt="">
                     </a>
                 </div>
                 <nav class="footer-nav">
                     <ul>
-                        <li><a href="mainPage.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="news.html">News</a></li>
                         <li><a href="sports.html">Sport</a></li>
-                        <li><a href="#">Business</a></li>
+                        <li><a href="business.html">Business</a></li>
                         <li><a href="#">Innovation</a></li>
                         <li><a href="#">Culture</a></li>
                         <li><a href="#">Arts</a></li>

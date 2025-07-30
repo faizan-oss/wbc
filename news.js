@@ -1,8 +1,8 @@
-const API_KEY = "88d122e1bc50484f9055b2a38e5f92bc"; // Replace with your API key
-const API_URL = `https://newsapi.org/v2/everything?q=technology&apiKey=88d122e1bc50484f9055b2a38e5f92bc`;
+const API_KEY = "demo"; // GNews demo key (for production, get your own at https://gnews.io/register)
+const API_URL = "https://gnews.io/api/v4/top-headlines?category=general&lang=en&country=us&max=90&apikey=8c6266cb52d9f64bb6110ef7582882b7";
 
 let currentPage = 1;
-const pageSize = 10; // Increased articles per page
+const pageSize = 10; // Articles per page
 const maxPages = 9; // Limit to 9 pages
 let allArticles = [];
 
@@ -11,7 +11,7 @@ async function fetchNews() {
         let response = await fetch(API_URL);
         let data = await response.json();
 
-        if (data.articles.length === 0) {
+        if (!data.articles || data.articles.length === 0) {
             document.getElementById("news-container").innerHTML = "<p>No news found.</p>";
             return;
         }
@@ -22,6 +22,7 @@ async function fetchNews() {
         setupPagination();
     } catch (error) {
         console.error("Error fetching news:", error);
+        document.getElementById("news-container").innerHTML = "<p>Error fetching news. Please try again later.</p>";
     }
 }
 
@@ -42,7 +43,7 @@ function displayNews() {
         }
 
         newsItem.innerHTML = `
-            <img src="${article.urlToImage || 'https://via.placeholder.com/600'}" alt="News Image">
+            <img src="${article.image || 'https://via.placeholder.com/600'}" alt="News Image">
             <h2>${article.title}</h2>
             <p>${article.description || "No description available."}</p>
             <a href="${article.url}" target="_blank">🔗 Read More</a>
